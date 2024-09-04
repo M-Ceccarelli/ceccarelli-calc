@@ -4,7 +4,7 @@ layout: default
 
 
 <div class="card">
-  <div class="card-header" style="background: var(--apoptosis-color);">
+  <div class="card-header" style="background: #fee000">
 Калькулятор готового раствора Fat Apoptosis
   </div>
   <div class="card-body">
@@ -28,7 +28,7 @@ layout: default
 </div>
 
 <div class="card">
-  <div class="card-header" style="background: var(--stamin-color);">
+  <div class="card-header" style="background: #b5b7bb">
 Калькулятор готового раствора Stamin C
   </div>
   <div class="card-body">
