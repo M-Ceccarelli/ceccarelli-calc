@@ -50,5 +50,7 @@ layout: default
 
   </div>
 </div>
-  
+  <style>
+    .card {margin-bottom: 1rem;}
+  </style>
 
