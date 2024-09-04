@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<link rel="stylesheet" id="catalog-css" href="/assets/css/main.css>
+
 
 <div class="card">
   <div class="card-header" style="background: var(--apoptosis-color);">
