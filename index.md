@@ -15,12 +15,12 @@ layout: default
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Фаза 1</span>
-  <input type="number" class="form-control cat-input " id="fat-fase-1" readonly="" step="0.1">
+  <input type="number" class="form-control cat-input " id="fat-fase-1"  step="0.1">
   <span class="input-group-text">мл</span>
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Фаза 2</span>
-  <input type="number" class="form-control cat-input " id="fat-fase-2" readonly="" step="0.1">
+  <input type="number" class="form-control cat-input " id="fat-fase-2"  step="0.1">
   <span class="input-group-text">мл</span>
 </div>
 
@@ -39,12 +39,12 @@ layout: default
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Фаза 1</span>
-  <input type="number" class="form-control cat-input " id="stamin-fase-1" readonly="">
+  <input type="number" class="form-control cat-input " id="stamin-fase-1" >
   <span class="input-group-text">мл</span>
 </div>
 <div class="input-group mb-3">
   <span class="input-group-text">Фаза 2</span>
-  <input type="number" class="form-control cat-input " id="stamin-fase-2" readonly="">
+  <input type="number" class="form-control cat-input " id="stamin-fase-2" >
   <span class="input-group-text">мл</span>
 </div>
 
