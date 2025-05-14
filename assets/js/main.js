@@ -1,21 +1,51 @@
-jQuery(document).ready(function() { 
-  
-  jQuery("#fat-full").on('keyup change',function(){
-    let fase1 = jQuery("#fat-full").val()*0.1;
-    let fase2 = jQuery("#fat-full").val()*0.9;
-    fase1 = fase1.toFixed(2);
-    fase2 = fase2.toFixed(2);
-    jQuery("#fat-fase-1").val(fase1);
-    jQuery("#fat-fase-2").val(fase2);
-  })
-	
-  jQuery("#stamin-full").on('keyup change',function(){
-    let fase1 = jQuery("#stamin-full").val()*0.2;
-    let fase2 = jQuery("#stamin-full").val()*0.8;
-    fase1 = fase1.toFixed(2);
-    fase2 = fase2.toFixed(2);
-    jQuery("#stamin-fase-1").val(fase1);
-    jQuery("#stamin-fase-2").val(fase2);
-  })
-  
-  })
+jQuery(document).ready(function($) {
+
+  // Универсальная фабрика калькуляторов
+  function createCalculator(config) {
+    const { valueField, phase1Field, phase2Field, ratio1, ratio2 } = config;
+
+    function updateFromValue() {
+      let value = parseFloat($(valueField).val()) || 0;
+      $(phase1Field).val((value * ratio1).toFixed(2));
+      $(phase2Field).val((value * ratio2).toFixed(2));
+    }
+
+    function updateFromPhase1() {
+      let phase1 = parseFloat($(phase1Field).val()) || 0;
+      let value = phase1 / ratio1;
+      $(valueField).val(value.toFixed(2));
+      $(phase2Field).val((value * ratio2).toFixed(2));
+    }
+
+    function updateFromPhase2() {
+      let phase2 = parseFloat($(phase2Field).val()) || 0;
+      let value = phase2 / ratio2;
+      $(valueField).val(value.toFixed(2));
+      $(phase1Field).val((value * ratio1).toFixed(2));
+    }
+
+    // Назначение обработчиков
+    $(valueField).on('keyup change', updateFromValue);
+    $(phase1Field).on('keyup change', updateFromPhase1);
+    $(phase2Field).on('keyup change', updateFromPhase2);
+  }
+
+  // === Использование для fat ===
+  createCalculator({
+    valueField: "#fat-full",
+    phase1Field: "#fat-fase-1",
+    phase2Field: "#fat-fase-2",
+    ratio1: 0.1,
+    ratio2: 0.9
+  });
+
+  // === Использование для stamin ===
+  createCalculator({
+    valueField: "#stamin-full",
+    phase1Field: "#stamin-fase-1",
+    phase2Field: "#stamin-fase-2",
+    ratio1: 0.2,
+    ratio2: 0.8
+  });
+
+});
